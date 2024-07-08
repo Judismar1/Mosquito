@@ -58,7 +58,7 @@
             posicaoRandomica();
         }, criaMosquitoTempo);
 
-        document.addEventListener('DOMContentLoaded', (event) => {
+        function iniciarJogo() {
             const audio = document.getElementById('myAudio');
             
             // Definir o tempo inicial para 120 segundos (2 minutos)
@@ -66,8 +66,12 @@
 
             // Reproduzir o áudio
             audio.play();
-        });
+        }
 
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Adicionar um evento de clique para iniciar o áudio quando o usuário interagir com a página
+            document.body.addEventListener('click', iniciarJogo, { once: true });
+        });
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybIvMtTNSHpeJthAmCfyXUATF0/8e4A4mKSR1Vf5YjKxBl4/D" crossorigin="anonymous"></script>
