@@ -1,7 +1,7 @@
 var altura = 0;
 var largura = 0;
 var vidas = 1;
-var tempo = 20;
+var tempo = 40;
 
 var criaMosquitoTempo = 1500;
 
@@ -50,8 +50,8 @@ function posicaoRandomica() {
         }
     }
 
-    var posicaoX = Math.floor(Math.random() * largura) - 90;
-    var posicaoY = Math.floor(Math.random() * altura) - 90;
+    var posicaoX = Math.floor(Math.random() * largura) - 60;
+    var posicaoY = Math.floor(Math.random() * altura) - 60;
 
     posicaoX = posicaoX < 0 ? 0 : posicaoX;
     posicaoY = posicaoY < 0 ? 0 : posicaoY;

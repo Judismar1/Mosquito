@@ -25,6 +25,10 @@
     <script src="jogo.js"></script>
 </head>
 <body onresize="ajustaTamanhoPalcoJogo()">
+    <audio id="myAudio" loop>
+        <source src="Noah Kahan - Stick Season (Official Music Video).mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
     <div class="container mt-3">
         <div class="row">
             <div class="col-12 d-flex justify-content-center">
@@ -53,6 +57,17 @@
         var criaMosquito = setInterval(function() {
             posicaoRandomica();
         }, criaMosquitoTempo);
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const audio = document.getElementById('myAudio');
+            
+            // Definir o tempo inicial para 120 segundos (2 minutos)
+            audio.currentTime = 17;
+
+            // Reproduzir o áudio
+            audio.play();
+        });
+
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybIvMtTNSHpeJthAmCfyXUATF0/8e4A4mKSR1Vf5YjKxBl4/D" crossorigin="anonymous"></script>
