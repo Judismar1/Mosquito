@@ -50,13 +50,22 @@
 
             window.location.href = "app.html?" + nivel;
         }
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const audio = document.getElementById('background-audio');
+            
+            // Tentar reproduzir o áudio automaticamente
+            audio.play().catch((error) => {
+                console.log('Autoplay foi bloqueado. Usuário precisa interagir com a página.');
+            });
+        });
     </script>
 </head>
 <body>
-    <audio id="background-audio" loop>
+    <audio id="background-audio" loop autoplay>
         <source src="traditional_irish.mp3" type="audio/mpeg">
         <source src="traditional_irish.ogg" type="audio/ogg">
-        Your browser does not support the audio element.
+        Seu navegador não suporta o elemento de áudio.
     </audio>
     <div class="container">
         <img src="imagens/game.png" class="img-fluid" alt="Game Image" />

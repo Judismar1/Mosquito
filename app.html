@@ -25,7 +25,7 @@
     <script src="jogo.js"></script>
 </head>
 <body onresize="ajustaTamanhoPalcoJogo()">
-    <audio id="myAudio" loop>
+    <audio id="myAudio" loop autoplay>
         <source src="Noah Kahan - Stick Season (Official Music Video).mp3" type="audio/mpeg">
         Seu navegador não suporta o elemento de áudio.
     </audio>
@@ -58,19 +58,16 @@
             posicaoRandomica();
         }, criaMosquitoTempo);
 
-        function iniciarJogo() {
+        document.addEventListener('DOMContentLoaded', (event) => {
             const audio = document.getElementById('myAudio');
             
-            // Definir o tempo inicial para 120 segundos (2 minutos)
+            // Definir o tempo inicial para 17 segundos
             audio.currentTime = 17;
-
-            // Reproduzir o áudio
-            audio.play();
-        }
-
-        document.addEventListener('DOMContentLoaded', (event) => {
-            // Adicionar um evento de clique para iniciar o áudio quando o usuário interagir com a página
-            document.body.addEventListener('click', iniciarJogo, { once: true });
+            
+            // Tentar reproduzir o áudio automaticamente
+            audio.play().catch((error) => {
+                console.log('Autoplay foi bloqueado. Usuário precisa interagir com a página.');
+            });
         });
     </script>
 
